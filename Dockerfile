@@ -5,7 +5,6 @@ ENV TZ=Asia/Tokyo
 
 WORKDIR /workdir
 
-# vimは後で消す
 ARG GCC_VERSION=12
 RUN apt-get update && apt-get install -y \
     gcc-${GCC_VERSION} \
@@ -13,8 +12,7 @@ RUN apt-get update && apt-get install -y \
     git \
     time \
     tree \
-    tzdata \
-    vim
+    tzdata
 
 RUN echo "alias gcc='gcc-${GCC_VERSION}'" >> ~/.bashrc && \
     echo "alias g++='g++-${GCC_VERSION}'" >> ~/.bashrc
