@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
     tzdata \
     vim
 
-RUN echo "alias g++='gcc-${GCC_VERSION}'" >> ~/.bashrc && \
+RUN echo "alias gcc='gcc-${GCC_VERSION}'" >> ~/.bashrc && \
     echo "alias g++='g++-${GCC_VERSION}'" >> ~/.bashrc
 
 ARG ACL_TAG=v1.5.1
