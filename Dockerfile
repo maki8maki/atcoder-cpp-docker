@@ -1,4 +1,4 @@
-FROM python:3.11-bookworm
+FROM python:3.11-slim-bookworm
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Asia/Tokyo
@@ -15,6 +15,9 @@ RUN apt-get update && apt-get install -y \
     tree \
     tzdata \
     vim
+
+RUN echo "alias g++='gcc-${GCC_VERSION}'" >> ~/.bashrc && \
+    echo "alias g++='g++-${GCC_VERSION}'" >> ~/.bashrc
 
 ARG ACL_TAG=v1.5.1
 ENV ACL_PATH="/workdir/ac-library"
