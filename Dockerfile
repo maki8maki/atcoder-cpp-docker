@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:latest
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Asia/Tokyo
@@ -6,8 +6,14 @@ ENV TZ=Asia/Tokyo
 WORKDIR /workdir
 
 # vimは後で消す
-RUN apt-get update && \
-    apt-get install -y time tzdata tree git gcc-12 g++-12 vim
+RUN apt-get update && apt-get install -y \
+    gcc-12 \
+    g++-12 \
+    git \
+    time \
+    tree \
+    tzdata \
+    vim
 
 ARG ACL_TAG=v1.5.1
 ENV ACL_PATH="/workdir/ac-library"
