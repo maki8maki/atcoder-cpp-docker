@@ -18,8 +18,8 @@ RUN echo "alias gcc='gcc-${GCC_VERSION}'" >> ~/.bashrc && \
     echo "alias g++='g++-${GCC_VERSION}'" >> ~/.bashrc
 
 ARG ACL_TAG=v1.5.1
-ENV ACL_PATH="/lib/ac-library"
-RUN git clone https://github.com/atcoder/ac-library.git -b ${ACL_TAG} ${ACL_PATH}
+ENV CPLUS_INCLUDE_PATH="/lib/ac-library"
+RUN git clone https://github.com/atcoder/ac-library.git -b ${ACL_TAG} ${CPLUS_INCLUDE_PATH}
 
 # atcoder-toolsのエラーを防ぐためにmarkupsafeのバージョンを指定してインストール
 # see https://keep-loving-python.hatenablog.com/entry/2022/08/29/121515
