@@ -18,7 +18,7 @@ RUN echo "alias gcc='gcc-${GCC_VERSION}'" >> ~/.bashrc && \
     echo "alias g++='g++-${GCC_VERSION}'" >> ~/.bashrc
 
 ARG ACL_TAG=v1.5.1
-ENV ACL_PATH="/workdir/ac-library"
+ENV ACL_PATH="/lib/ac-library"
 RUN git clone https://github.com/atcoder/ac-library.git -b ${ACL_TAG} ${ACL_PATH}
 
 # atcoder-toolsのエラーを防ぐためにmarkupsafeのバージョンを指定してインストール
