@@ -82,7 +82,7 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Create and push manifest images to ghcr.io
-        uses: Noelware/docker-manifest-action@0.4.2
+        uses: Noelware/docker-manifest-action@0.4.3
         with:
           inputs: ghcr.io/maki8maki/atcoder-cpp-docker:latest,ghcr.io/maki8maki/atcoder-cpp-docker:${{ env.IMAGE_VERSION }}
           images: ghcr.io/maki8maki/atcoder-cpp-docker:latest-amd64,ghcr.io/maki8maki/atcoder-cpp-docker:latest-arm64
