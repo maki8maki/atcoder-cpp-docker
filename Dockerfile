@@ -5,7 +5,7 @@ ENV TZ=Asia/Tokyo
 
 WORKDIR /workdir
 
-ARG GCC_VERSION=12
+ARG GCC_VERSION=15
 RUN apt-get update && apt-get install -y \
     build-essential \
     gcc-${GCC_VERSION} \
